@@ -1,0 +1,113 @@
+name: MAG8000-LTE ReqIF end-to-end
+
+on:
+  push:
+    paths:
+      - "source/MAG8000-LTE-FeatureSpecReqBL4.reqif"
+      - "RequirementsAnalysis.xml"
+      - "analysis/reqif-inventory.md"
+      - "analysis/semantic-model.md"
+      - "analysis/converter-test-scope.md"
+      - "validation/reqif/**"
+      - ".github/workflows/reqif-e2e.yml"
+  pull_request:
+    paths:
+      - "source/MAG8000-LTE-FeatureSpecReqBL4.reqif"
+      - "RequirementsAnalysis.xml"
+      - "analysis/reqif-inventory.md"
+      - "analysis/semantic-model.md"
+      - "analysis/converter-test-scope.md"
+      - "validation/reqif/**"
+      - ".github/workflows/reqif-e2e.yml"
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mag8000-lte-reqif:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout MAG8000-LTE project
+        uses: actions/checkout@v4
+
+      - name: Checkout GRACE tools
+        uses: actions/checkout@v4
+        with:
+          repository: bogachenko/grace
+          ref: main
+          path: grace
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+
+      - name: Run GRACE-ReqIF tests
+        run: cargo test --manifest-path grace/tools/grace-reqif/Cargo.toml --all-targets
+
+      - name: Run GRACE-ARP tests
+        run: cargo test --manifest-path grace/tools/grace-arp/Cargo.toml --all-targets
+
+      - name: Inspect the real Polarion ReqIF
+        run: |
+          cargo run --manifest-path grace/tools/grace-reqif/Cargo.toml -- inspect \
+            --input source/MAG8000-LTE-FeatureSpecReqBL4.reqif
+
+      - name: Prepare isolated project copy
+        run: |
+          mkdir -p "$RUNNER_TEMP/mag8000-lte-project"
+          cp RequirementsAnalysis.xml "$RUNNER_TEMP/mag8000-lte-project/RequirementsAnalysis.xml"
+          cp RequirementsAnalysis.xml "$RUNNER_TEMP/RequirementsAnalysis.before.xml"
+          cp source/MAG8000-LTE-FeatureSpecReqBL4.reqif "$RUNNER_TEMP/MAG8000-LTE-FeatureSpecReqBL4.reqif"
+
+      - name: Import the complete ReqIF corpus into the isolated copy
+        run: |
+          cargo run --manifest-path grace/tools/grace-reqif/Cargo.toml -- import \
+            --input "$RUNNER_TEMP/MAG8000-LTE-FeatureSpecReqBL4.reqif" \
+            --project "$RUNNER_TEMP/mag8000-lte-project" \
+            --mapping validation/reqif/mag8000-lte-bl4.xml \
+            --specification "feature specification baseline 4" \
+            --skip-grace-validation
+
+      - name: Generate and validate the C1 view
+        run: |
+          cargo run --manifest-path grace/tools/grace-arp/Cargo.toml -- generate \
+            --project "$RUNNER_TEMP/mag8000-lte-project" \
+            --views c1 \
+            --output "$RUNNER_TEMP/MAG8000-LTE-C1.dsl"
+
+      - name: Assert corpus preservation, traceability, and CT-01..CT-13
+        run: |
+          python3 validation/reqif/mag8000_lte_audit.py \
+            --source source/MAG8000-LTE-FeatureSpecReqBL4.reqif \
+            --report "$RUNNER_TEMP/MAG8000-LTE-FeatureSpecReqBL4.reqif.import-report.xml" \
+            --requirements-before "$RUNNER_TEMP/RequirementsAnalysis.before.xml" \
+            --requirements-after "$RUNNER_TEMP/mag8000-lte-project/RequirementsAnalysis.xml" \
+            --inventory analysis/reqif-inventory.md \
+            --semantic-model analysis/semantic-model.md \
+            --test-scope analysis/converter-test-scope.md \
+            --c1-output "$RUNNER_TEMP/MAG8000-LTE-C1.dsl"
+
+      - name: Stage audit evidence
+        if: always()
+        run: |
+          mkdir -p validation-output
+          if [ -f "$RUNNER_TEMP/MAG8000-LTE-FeatureSpecReqBL4.reqif.import-report.xml" ]; then
+            cp "$RUNNER_TEMP/MAG8000-LTE-FeatureSpecReqBL4.reqif.import-report.xml" validation-output/
+          fi
+          if [ -f "$RUNNER_TEMP/MAG8000-LTE-C1.dsl" ]; then
+            cp "$RUNNER_TEMP/MAG8000-LTE-C1.dsl" validation-output/
+          fi
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mag8000-lte-reqif-audit
+          if-no-files-found: warn
+          path: validation-output/
