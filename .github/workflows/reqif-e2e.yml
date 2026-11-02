@@ -34,13 +34,8 @@ jobs:
       - name: Checkout MAG8000-LTE project
         uses: actions/checkout@v4
 
-      - name: Checkout GRACE tools
-        uses: actions/checkout@v4
-        with:
-          repository: bogachenko/grace
-          ref: main
-          path: grace
-          persist-credentials: false
+      - name: Checkout public GRACE tools
+        run: git clone --depth 1 --branch main https://github.com/bogachenko/grace.git grace
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
