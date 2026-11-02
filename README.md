@@ -12,6 +12,7 @@
 
 - Основной артефакт требований: `RequirementsAnalysis.xml`
 - Полный реестр исходных Feature, Heading и связей: `analysis/reqif-inventory.md`
+- Матрица испытаний конвертера ReqIF → GRACE с приоритетным стресс-набором: `analysis/converter-test-scope.md`
 - Зафиксированная основа и правила преобразования: `analysis/requirements-decisions.md`
 - Предварительная семантическая классификация всех 70 Feature: `analysis/semantic-model.md`
 - Оригинальный ReqIF: `source/MAG8000-LTE-FeatureSpecReqBL4.reqif`
