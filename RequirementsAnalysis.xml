@@ -3,19 +3,19 @@
     <PROJECT_GOAL id="GOAL-MAG8000-LTE">Provide the MAG8000-LTE 4G communication module for MAG8000 Transmitter with the functionality specified in feature specification baseline 4.</PROJECT_GOAL>
     <SOURCE_DOCUMENT id="SRC-MAG8000-LTE-BL4" file="MAG8000-LTE-FeatureSpecReqBL4.reqif" reqif_version="1.0" tool="Polarion ReqIF Roundtrip" source_tool="Polarion" specification="feature specification baseline 4" created_on="2022-06-22T11:22:44.868+02:00" sha256="19eb5406e59c27417e57c25c097c948e8ab8b5f23d97a0692b51721ecfc8a5c8" git_blob_sha1="fa29d4f0711864350a3c4127ad7be526c2b68628" />
     <ACTORS />
-    <EXTERNAL_SYSTEM id="EXT-WEB-APP">MAG8000 Web APP</EXTERNAL_SYSTEM>
+    <EXTERNAL_SYSTEM id="EXT-WEB-APP">Mag8000 web APP</EXTERNAL_SYSTEM>
     <SYSTEM_INTERACTION id="INT-WEB-APP-GET-PARAMETER" external_system_ref="EXT-WEB-APP" direction="EXTERNAL_TO_SYSTEM">
-        <PURPOSE>Trigger GET_PARAMETER command to retrieve all needed parameters.</PURPOSE>
+        <PURPOSE>Mag8000 web APP will trigger GET_PARAMETER command in order to get all needed parameter.</PURPOSE>
         <SOURCE_REQUIREMENT_REF ref="adr-10353" />
     </SYSTEM_INTERACTION>
     <EXTERNAL_SYSTEM id="EXT-MQTT-BROKER">MQTT Broker</EXTERNAL_SYSTEM>
     <SYSTEM_INTERACTION id="INT-MODULE-MQTT-ALARMS" external_system_ref="EXT-MQTT-BROKER" direction="SYSTEM_TO_EXTERNAL">
-        <PURPOSE>Send alarms with timestamps when errors are detected.</PURPOSE>
+        <PURPOSE>The module will send the alarms to MQTT Broker in case errors are detected with the time stamp. Refer to chapter &quot;Real time alarm message format.&quot; of document MQTT Interface .</PURPOSE>
         <SOURCE_REQUIREMENT_REF ref="adr-10341" />
     </SYSTEM_INTERACTION>
-    <EXTERNAL_SYSTEM id="EXT-THINGSTREAM-SERVER">Thingstream server</EXTERNAL_SYSTEM>
+    <EXTERNAL_SYSTEM id="EXT-THINGSTREAM-SERVER">thingstream server</EXTERNAL_SYSTEM>
     <SYSTEM_INTERACTION id="INT-THINGSTREAM-CLOCK-SYNC" external_system_ref="EXT-THINGSTREAM-SERVER" direction="EXTERNAL_TO_SYSTEM">
-        <PURPOSE>Provide UNIX-UTC timing for regular module clock synchronization.</PURPOSE>
+        <PURPOSE>Clock synchronization of the module will be done through synchronisation in UNIX-UTC timing provided by thingstream server. . This clock will be synchronized regularly.</PURPOSE>
         <SOURCE_REQUIREMENT_REF ref="adr-10406" />
     </SYSTEM_INTERACTION>
     <SOURCE_SECTIONS source_file="MAG8000-LTE-FeatureSpecReqBL4.reqif">
