@@ -13,6 +13,7 @@
 - Основной артефакт требований: `RequirementsAnalysis.xml`
 - Полный реестр исходных Feature, Heading и связей: `analysis/reqif-inventory.md`
 - Зафиксированная основа и правила преобразования: `analysis/requirements-decisions.md`
+- Предварительная семантическая классификация всех 70 Feature: `analysis/semantic-model.md`
 - Оригинальный ReqIF: `source/MAG8000-LTE-FeatureSpecReqBL4.reqif`
 - Методология GRACE: `docs/`
 - Профиль GRACE-ARP: `docs/profiles/arp/GRACE-ARP.md`
