@@ -2,17 +2,19 @@
 
 Проект ведётся по методологии GRACE и профилю GRACE-ARP.
 
-## Текущее состояние
+## Источник требований
 
-Исходный ReqIF экспорт Polarion сохранён в `source/MAG8000-LTE-FeatureSpecReqBL4.reqif`.
-Его структура и содержание проинвентаризированы в `analysis/reqif-inventory.md`.
+Единственный источник требований — `source/MAG8000-LTE-FeatureSpecReqBL4.reqif`, Polarion `feature specification baseline 4`.
 
-`RequirementsAnalysis.xml` пока не создан: до фиксации семантического графа необходимо согласовать границу системы, baseline/release scope и два неполных объекта источника. Открытые решения перечислены в `analysis/requirements-decisions.md`.
+В работу включены все 70 Feature и все 32 Heading исходного документа. Пометки Release 1/Release 2, nice-to-have и обсуждаемые пункты сохраняются; требования не фильтруются и не дополняются внешними предположениями.
 
 ## GRACE
 
-- Методология: `docs/`
+- Основной артефакт требований: `RequirementsAnalysis.xml`
+- Инвентаризация исходного ReqIF: `analysis/reqif-inventory.md`
+- Правила преобразования и принятый scope: `analysis/requirements-decisions.md`
+- GRACE: `docs/`
 - GRACE-ARP: `docs/profiles/arp/GRACE-ARP.md`
 - Инструкции проекта: `GRACE-ARP-INSTRUCTIONS.md`
 
-Не создавай архитектурные факты, акторов, внешние системы, сценарии или связи только по упоминаниям в исходном ReqIF. Сначала согласуй открытые решения и затем формируй утверждаемый `RequirementsAnalysis.xml`.
+В `RequirementsAnalysis.xml` исходные Feature сохранены как отдельный provenance-слой, чтобы не приписывать им неподтверждённую семантику. C1-взаимодействия создаются только при наличии прямого указания в исходном документе.
