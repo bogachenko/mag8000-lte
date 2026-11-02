@@ -111,7 +111,7 @@
 
 ## Автоматизированный сквозной прогон
 
-Исполняемый сценарий находится в `validation/reqif/mag8000_lte_audit.py`, явная карта — в `validation/reqif/mag8000-lte-bl4.xml`. Workflow `.github/workflows/reqif-e2e.yml` запускает GRACE-ReqIF и GRACE-ARP из отдельного репозитория `bogachenko/grace`, импортирует оригинальный ReqIF во временную копию проекта и сохраняет отчёт и C1 DSL как CI artifacts.
+Исполняемый сценарий находится в `validation/reqif/mag8000_lte_audit.py`, явная карта — в `validation/reqif/mag8000-lte-bl4.xml`. Workflow `.github/workflows/reqif-e2e.yml` запускает GRACE-ReqIF и GRACE-ARP из отдельного приватного репозитория `bogachenko/grace`, импортирует оригинальный ReqIF во временную копию проекта и сохраняет отчёт и C1 DSL как CI artifacts. Для checkout GRACE в GitHub Actions необходим repository secret `GRACE_REPO_READ_TOKEN` с правом Contents: Read-only только на `bogachenko/grace`; токен не хранится в файлах проекта.
 
 Проверяются полный корпус (70 Feature, 32 Heading, 26 `fulfills`), исходные атрибуты и XHTML, все 102 узла иерархии, Polarion ID, пустые `ReqIF.Text`, три уже формализованных инварианта, три существующих C1-взаимодействия, отсутствие дублирования XML и все группы CT-01—CT-13.
 
