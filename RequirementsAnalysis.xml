@@ -2,7 +2,6 @@
 <REQUIREMENTS_ANALYSIS id="RA-MAG8000-LTE-BL4" system_name="MAG8000-LTE">
     <PROJECT_GOAL id="GOAL-MAG8000-LTE">Provide the MAG8000-LTE 4G communication module for MAG8000 Transmitter with the functionality specified in feature specification baseline 4.</PROJECT_GOAL>
 
-    <ACTORS />
 
     <EXTERNAL_SYSTEM id="EXT-WEB-APP">Mag8000 web APP</EXTERNAL_SYSTEM>
     <SYSTEM_INTERACTION id="INT-WEB-APP-GET-PARAMETER" external_system_ref="EXT-WEB-APP" direction="EXTERNAL_TO_SYSTEM">
@@ -18,4 +17,8 @@
     <SYSTEM_INTERACTION id="INT-THINGSTREAM-CLOCK-SYNC" external_system_ref="EXT-THINGSTREAM-SERVER" direction="EXTERNAL_TO_SYSTEM">
         <PURPOSE>adr-10406: Clock synchronization of the module will be done through synchronisation in UNIX-UTC timing provided by thingstream server. . This clock will be synchronized regularly.</PURPOSE>
     </SYSTEM_INTERACTION>
+
+    <INVARIANT id="INV-ADR-10337-HOST-ALARM-PRESERVATION">adr-10337: The alarm mask functions shall not disable the real-time alarms of the host device.</INVARIANT>
+    <INVARIANT id="INV-ADR-10389-MODULE-HOT-SWAP">adr-10389: hot swap shouldn't destroy the module, after unplug and plug the module, the module should work again.</INVARIANT>
+    <INVARIANT id="INV-ADR-10397-TRANSMITTER-HOT-SWAP">adr-10397: The module will be hot swappable without damaging the Transmitter.</INVARIANT>
 </REQUIREMENTS_ANALYSIS>
