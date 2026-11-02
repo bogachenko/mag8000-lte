@@ -913,32 +913,32 @@ The voltage input cable will be available as spare part
 
 | № | Relation ID | SOURCE | Отсутствующий TARGET |
 |---:|---|---|---|
-| 1 | `rmf-dcba3a5a-d1fb-4047-accd-cc5430ba9508` | `rmf-d05859e8-cbb1-4d44-a5c9-f1302d84356b` | `rmf-c2345a84-ce17-46a1-9a3b-87db23bdf73c` |
-| 2 | `rmf-30316e4f-0ccf-449f-9338-40898d26cde4` | `rmf-fe3aa783-f231-439b-9ac0-b8a4a12faa28` | `rmf-90467e41-5651-44a8-888a-36c37f9a90a0` |
-| 3 | `rmf-8e304b49-d386-4071-a65b-96d2fdc51279` | `rmf-60c855fd-14a9-4421-909b-31fbcbc03f60` | `rmf-2757d5f2-5180-4c04-99d0-176cb071e6a7` |
-| 4 | `rmf-e0144d9a-7a44-4d72-b5e3-dec7d1d1bd01` | `rmf-85ec44fe-1d22-4bb6-956a-029ea077ff2e` | `rmf-6024ded0-603e-4282-93c1-dfd209800c1b` |
-| 5 | `rmf-48b1445d-dab1-4c63-8cf7-c897c6ae4f02` | `rmf-33ea43d6-195f-4c98-88b4-a1b1a9442552` | `rmf-55174b6a-289c-42f1-877d-46a8e6f1b4f1` |
-| 6 | `rmf-a0b763d9-7f82-4c13-8f40-1db484340d6b` | `rmf-0fc68cc5-bd97-4b9a-aa8e-c2c0ace00aca` | `rmf-12297089-eea8-4bde-a866-19fa8e2b7902` |
-| 7 | `rmf-baa87900-f954-4665-9a2c-e95f877a51fc` | `rmf-2d3f8c46-36b7-4a8a-9a4c-939bdadcb0f5` | `rmf-f465ea3a-79ef-4fef-bc13-88c8f98b84a5` |
-| 8 | `rmf-e1af12cb-d767-4186-a803-ac7d44b3e2ba` | `rmf-9fd75be9-da83-4a08-9142-b7d64edeb3a1` | `rmf-39b5cd09-37f9-42dc-95f4-c7f5e28b67c4` |
-| 9 | `rmf-45b7e55c-1d60-4fbc-a70c-82670852835d` | `rmf-03287a36-554c-4748-81bb-688f8ec78f72` | `rmf-39b5cd09-37f9-42dc-95f4-c7f5e28b67c4` |
-| 10 | `rmf-0ebc9fa1-1e26-400d-bbdf-b27dbb91e3a0` | `rmf-e70fe503-6699-46ae-b640-4d8392f9fc13` | `rmf-9f568401-5b3d-4621-b1a8-4d7f78d5cf42` |
-| 11 | `rmf-0de96ec1-f202-4198-aa48-8663a3bf3233` | `rmf-39ab40bd-933f-48cb-a4d8-313dcc7c885d` | `rmf-42ba9181-38c9-47c7-b949-c7227bd14c9f` |
-| 12 | `rmf-87f98145-209e-4dc7-89c2-5be2b2adb619` | `rmf-25f71507-382b-466a-a2bd-f1993a658200` | `rmf-48e30a43-bdb8-4a07-8bea-8805a0a07572` |
-| 13 | `rmf-b3038ecf-087a-4582-9dd2-54278fe3bda6` | `rmf-f3df1e27-7269-4142-8b9c-117be64b62a3` | `rmf-9dec5683-7721-4809-a204-7b9777f991ae` |
-| 14 | `rmf-563e75ab-5d6d-4e32-85ce-fc7eb0661490` | `rmf-f5a558ae-5ee9-4964-b0b3-befc8d04f64d` | `rmf-92216a53-a63e-4fee-a531-5d6b20a5037d` |
-| 15 | `rmf-df049325-9af8-480b-9b33-64bba0672cd7` | `rmf-a41849a2-0846-436e-a653-9b54d4838e01` | `rmf-79ad8814-5de1-4c9f-a97f-607e5880cf06` |
-| 16 | `rmf-944c55e7-40fd-498d-89a8-fc66730ff72b` | `rmf-82074d06-923d-49be-b264-40e0cec2747e` | `rmf-facd3a8f-34d1-4336-8f5e-84442cf3d4a5` |
-| 17 | `rmf-a71dc021-04a2-451f-bb9a-9ef33e96730d` | `rmf-391ccc15-5fc9-433e-8536-8c46fa85c2bf` | `rmf-d075d01b-2bcc-448e-a8f6-2d96b507c99b` |
-| 18 | `rmf-1895cb52-9cab-4b42-9fb7-0794a40147d8` | `rmf-c293bd25-498e-459c-b8a2-cad58876e8e1` | `rmf-3c9c3fbb-3052-4d49-9b44-bfdd6b787090` |
-| 19 | `rmf-dd7384f0-d341-4c21-98d7-b5b385f37ef6` | `rmf-14aef2f4-ae11-42a6-8196-9c86ced12f97` | `rmf-e09775fb-33c1-4860-8b89-41124a686a45` |
-| 20 | `rmf-38e5cc1a-4d38-4347-b0b2-13ef99b4d7ab` | `rmf-1e522700-7ba4-4a52-9432-77bebe108f0a` | `rmf-78385236-1e95-4fc3-b73a-413e8014ec20` |
-| 21 | `rmf-27a66efc-b82a-4178-ace2-3993976bacbf` | `rmf-00f3e84a-251e-4d1c-ba54-4f26c768ca2b` | `rmf-a39c3d94-45cc-473b-96d1-b5afa7ebfd53` |
-| 22 | `rmf-0470b801-7181-4cff-962c-4945b5d624d1` | `rmf-00f3e84a-251e-4d1c-ba54-4f26c768ca2b` | `rmf-9634e0e6-cd37-45eb-ac1c-98205d0600ec` |
-| 23 | `rmf-c458b485-abf1-49b3-a73e-56b54b4a1e0e` | `rmf-228d7a55-2dca-4531-8e44-e473dc2ea51c` | `rmf-6ad1a3af-bfb6-4c79-94c5-5f845e3daca4` |
-| 24 | `rmf-519b1f9b-cfb8-4889-b40d-3ccc07fde0d9` | `rmf-62b981de-6d5e-42c2-8fb8-37c52310d67d` | `rmf-38e09f0b-ed02-4141-92aa-0b2692d27ca0` |
-| 25 | `rmf-06c60b6a-bc40-4211-bb97-9b5966ace60f` | `rmf-5fc6151d-a88d-45af-9f74-968daea2ff9e` | `rmf-29de3010-a096-4242-a329-385674b07814` |
-| 26 | `rmf-81085895-dcd7-4db2-b238-57b2275bbe5f` | `rmf-f0e7b409-602a-479b-b529-1e617a488f1b` | `rmf-925ceba4-cd00-43a7-9b0b-ebe5e4c19a76` |
+| 1 | `rmf-dcba3a5a-d1fb-4047-accd-cc5430ba9508` | `rmf-c2345a84-ce17-46a1-9a3b-87db23bdf73c` | `rmf-d05859e8-cbb1-4d44-a5c9-f1302d84356b` |
+| 2 | `rmf-30316e4f-0ccf-449f-9338-40898d26cde4` | `rmf-90467e41-5651-44a8-888a-36c37f9a90a0` | `rmf-fe3aa783-f231-439b-9ac0-b8a4a12faa28` |
+| 3 | `rmf-8e304b49-d386-4071-a65b-96d2fdc51279` | `rmf-2757d5f2-5180-4c04-99d0-176cb071e6a7` | `rmf-60c855fd-14a9-4421-909b-31fbcbc03f60` |
+| 4 | `rmf-e0144d9a-7a44-4d72-b5e3-dec7d1d1bd01` | `rmf-6024ded0-603e-4282-93c1-dfd209800c1b` | `rmf-85ec44fe-1d22-4bb6-956a-029ea077ff2e` |
+| 5 | `rmf-48b1445d-dab1-4c63-8cf7-c897c6ae4f02` | `rmf-55174b6a-289c-42f1-877d-46a8e6f1b4f1` | `rmf-33ea43d6-195f-4c98-88b4-a1b1a9442552` |
+| 6 | `rmf-a0b763d9-7f82-4c13-8f40-1db484340d6b` | `rmf-12297089-eea8-4bde-a866-19fa8e2b7902` | `rmf-0fc68cc5-bd97-4b9a-aa8e-c2c0ace00aca` |
+| 7 | `rmf-baa87900-f954-4665-9a2c-e95f877a51fc` | `rmf-f465ea3a-79ef-4fef-bc13-88c8f98b84a5` | `rmf-2d3f8c46-36b7-4a8a-9a4c-939bdadcb0f5` |
+| 8 | `rmf-e1af12cb-d767-4186-a803-ac7d44b3e2ba` | `rmf-39b5cd09-37f9-42dc-95f4-c7f5e28b67c4` | `rmf-9fd75be9-da83-4a08-9142-b7d64edeb3a1` |
+| 9 | `rmf-45b7e55c-1d60-4fbc-a70c-82670852835d` | `rmf-39b5cd09-37f9-42dc-95f4-c7f5e28b67c4` | `rmf-03287a36-554c-4748-81bb-688f8ec78f72` |
+| 10 | `rmf-0ebc9fa1-1e26-400d-bbdf-b27dbb91e3a0` | `rmf-9f568401-5b3d-4621-b1a8-4d7f78d5cf42` | `rmf-e70fe503-6699-46ae-b640-4d8392f9fc13` |
+| 11 | `rmf-0de96ec1-f202-4198-aa48-8663a3bf3233` | `rmf-42ba9181-38c9-47c7-b949-c7227bd14c9f` | `rmf-39ab40bd-933f-48cb-a4d8-313dcc7c885d` |
+| 12 | `rmf-87f98145-209e-4dc7-89c2-5be2b2adb619` | `rmf-48e30a43-bdb8-4a07-8bea-8805a0a07572` | `rmf-25f71507-382b-466a-a2bd-f1993a658200` |
+| 13 | `rmf-b3038ecf-087a-4582-9dd2-54278fe3bda6` | `rmf-9dec5683-7721-4809-a204-7b9777f991ae` | `rmf-f3df1e27-7269-4142-8b9c-117be64b62a3` |
+| 14 | `rmf-563e75ab-5d6d-4e32-85ce-fc7eb0661490` | `rmf-92216a53-a63e-4fee-a531-5d6b20a5037d` | `rmf-f5a558ae-5ee9-4964-b0b3-befc8d04f64d` |
+| 15 | `rmf-df049325-9af8-480b-9b33-64bba0672cd7` | `rmf-79ad8814-5de1-4c9f-a97f-607e5880cf06` | `rmf-a41849a2-0846-436e-a653-9b54d4838e01` |
+| 16 | `rmf-944c55e7-40fd-498d-89a8-fc66730ff72b` | `rmf-facd3a8f-34d1-4336-8f5e-84442cf3d4a5` | `rmf-82074d06-923d-49be-b264-40e0cec2747e` |
+| 17 | `rmf-a71dc021-04a2-451f-bb9a-9ef33e96730d` | `rmf-d075d01b-2bcc-448e-a8f6-2d96b507c99b` | `rmf-391ccc15-5fc9-433e-8536-8c46fa85c2bf` |
+| 18 | `rmf-1895cb52-9cab-4b42-9fb7-0794a40147d8` | `rmf-3c9c3fbb-3052-4d49-9b44-bfdd6b787090` | `rmf-c293bd25-498e-459c-b8a2-cad58876e8e1` |
+| 19 | `rmf-dd7384f0-d341-4c21-98d7-b5b385f37ef6` | `rmf-e09775fb-33c1-4860-8b89-41124a686a45` | `rmf-14aef2f4-ae11-42a6-8196-9c86ced12f97` |
+| 20 | `rmf-38e5cc1a-4d38-4347-b0b2-13ef99b4d7ab` | `rmf-78385236-1e95-4fc3-b73a-413e8014ec20` | `rmf-1e522700-7ba4-4a52-9432-77bebe108f0a` |
+| 21 | `rmf-27a66efc-b82a-4178-ace2-3993976bacbf` | `rmf-a39c3d94-45cc-473b-96d1-b5afa7ebfd53` | `rmf-00f3e84a-251e-4d1c-ba54-4f26c768ca2b` |
+| 22 | `rmf-0470b801-7181-4cff-962c-4945b5d624d1` | `rmf-9634e0e6-cd37-45eb-ac1c-98205d0600ec` | `rmf-00f3e84a-251e-4d1c-ba54-4f26c768ca2b` |
+| 23 | `rmf-c458b485-abf1-49b3-a73e-56b54b4a1e0e` | `rmf-6ad1a3af-bfb6-4c79-94c5-5f845e3daca4` | `rmf-228d7a55-2dca-4531-8e44-e473dc2ea51c` |
+| 24 | `rmf-519b1f9b-cfb8-4889-b40d-3ccc07fde0d9` | `rmf-38e09f0b-ed02-4141-92aa-0b2692d27ca0` | `rmf-62b981de-6d5e-42c2-8fb8-37c52310d67d` |
+| 25 | `rmf-06c60b6a-bc40-4211-bb97-9b5966ace60f` | `rmf-29de3010-a096-4242-a329-385674b07814` | `rmf-5fc6151d-a88d-45af-9f74-968daea2ff9e` |
+| 26 | `rmf-81085895-dcd7-4db2-b238-57b2275bbe5f` | `rmf-925ceba4-cd00-43a7-9b0b-ebe5e4c19a76` | `rmf-f0e7b409-602a-479b-b529-1e617a488f1b` |
 
 ## 6. Пометки статуса из источника
 
