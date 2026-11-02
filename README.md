@@ -11,10 +11,11 @@
 ## GRACE
 
 - Основной артефакт требований: `RequirementsAnalysis.xml`
-- Инвентаризация исходного ReqIF: `analysis/reqif-inventory.md`
-- Правила преобразования и принятый scope: `analysis/requirements-decisions.md`
-- GRACE: `docs/`
-- GRACE-ARP: `docs/profiles/arp/GRACE-ARP.md`
+- Полный реестр исходных Feature, Heading и связей: `analysis/reqif-inventory.md`
+- Зафиксированная основа и правила преобразования: `analysis/requirements-decisions.md`
+- Оригинальный ReqIF: `source/MAG8000-LTE-FeatureSpecReqBL4.reqif`
+- Методология GRACE: `docs/`
+- Профиль GRACE-ARP: `docs/profiles/arp/GRACE-ARP.md`
 - Инструкции проекта: `GRACE-ARP-INSTRUCTIONS.md`
 
-В `RequirementsAnalysis.xml` исходные Feature сохранены как отдельный provenance-слой, чтобы не приписывать им неподтверждённую семантику. C1-взаимодействия создаются только при наличии прямого указания в исходном документе.
+`RequirementsAnalysis.xml` содержит только семантику, которую можно подтвердить исходным документом и выразить конструкциями GRACE/GRACE-ARP. Полный набор Polarion Feature сохраняется в реестре без искусственного преобразования типов.
