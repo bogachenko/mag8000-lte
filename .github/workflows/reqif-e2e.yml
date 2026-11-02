@@ -34,8 +34,23 @@ jobs:
       - name: Checkout MAG8000-LTE project
         uses: actions/checkout@v4
 
-      - name: Checkout public GRACE tools
-        run: git clone --depth 1 --branch main https://github.com/bogachenko/grace.git grace
+      - name: Verify access to the private GRACE repository
+        env:
+          GRACE_REPO_READ_TOKEN: ${{ secrets.GRACE_REPO_READ_TOKEN }}
+        run: |
+          if [ -z "$GRACE_REPO_READ_TOKEN" ]; then
+            echo "::error title=Missing repository secret::Add Actions secret GRACE_REPO_READ_TOKEN with Contents read-only access to bogachenko/grace."
+            exit 1
+          fi
+
+      - name: Checkout GRACE tools
+        uses: actions/checkout@v4
+        with:
+          repository: bogachenko/grace
+          ref: main
+          path: grace
+          token: ${{ secrets.GRACE_REPO_READ_TOKEN }}
+          persist-credentials: false
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
