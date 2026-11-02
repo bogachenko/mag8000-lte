@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQIF_MAPPING version="1">
+    <!-- Existing approved invariants: reference them, never duplicate them. -->
+    <OBJECT_RULE reqif_id="rmf-32649e4a-df00-4fa0-87dd-308ce5c15221"
+                 action="REFERENCE"
+                 target="INVARIANT"
+                 grace_id="INV-ADR-10337-HOST-ALARM-PRESERVATION"/>
+    <OBJECT_RULE reqif_id="rmf-03759471-ed42-457b-9420-902bfd6f1420"
+                 action="REFERENCE"
+                 target="INVARIANT"
+                 grace_id="INV-ADR-10389-MODULE-HOT-SWAP"/>
+    <OBJECT_RULE reqif_id="rmf-854899f5-deae-427f-92db-740fe556ab49"
+                 action="REFERENCE"
+                 target="INVARIANT"
+                 grace_id="INV-ADR-10397-TRANSMITTER-HOT-SWAP"/>
+
+    <!-- Preserve all other Feature and Heading objects in the audit report.
+         Do not infer unsupported GRACE semantics from Polarion object types. -->
+    <TYPE_RULE reqif_type="Feature" action="SKIP"/>
+    <TYPE_RULE reqif_type="Heading" action="SKIP"/>
+</REQIF_MAPPING>
