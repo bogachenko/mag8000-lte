@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQUIREMENTS_ANALYSIS id="RA-MAG8000-LTE-BL4" system_name="MAG8000-LTE">
+    <PROJECT_GOAL id="GOAL-MAG8000-LTE">Provide the MAG8000-LTE 4G communication module for MAG8000 Transmitter with the functionality specified in feature specification baseline 4.</PROJECT_GOAL>
+
+    <ACTORS />
+
+    <EXTERNAL_SYSTEM id="EXT-WEB-APP">Mag8000 web APP</EXTERNAL_SYSTEM>
+    <SYSTEM_INTERACTION id="INT-WEB-APP-GET-PARAMETER" external_system_ref="EXT-WEB-APP" direction="EXTERNAL_TO_SYSTEM">
+        <PURPOSE>adr-10353: Mag8000 web APP will trigger GET_PARAMETER command in order to get all needed parameter.</PURPOSE>
+    </SYSTEM_INTERACTION>
+
+    <EXTERNAL_SYSTEM id="EXT-MQTT-BROKER">MQTT Broker</EXTERNAL_SYSTEM>
+    <SYSTEM_INTERACTION id="INT-MODULE-MQTT-ALARMS" external_system_ref="EXT-MQTT-BROKER" direction="SYSTEM_TO_EXTERNAL">
+        <PURPOSE>adr-10341: The module will send the alarms to MQTT Broker in case errors are detected with the time stamp. Refer to chapter &quot;Real time alarm message format.&quot; of document MQTT Interface .</PURPOSE>
+    </SYSTEM_INTERACTION>
+
+    <EXTERNAL_SYSTEM id="EXT-THINGSTREAM-SERVER">thingstream server</EXTERNAL_SYSTEM>
+    <SYSTEM_INTERACTION id="INT-THINGSTREAM-CLOCK-SYNC" external_system_ref="EXT-THINGSTREAM-SERVER" direction="EXTERNAL_TO_SYSTEM">
+        <PURPOSE>adr-10406: Clock synchronization of the module will be done through synchronisation in UNIX-UTC timing provided by thingstream server. . This clock will be synchronized regularly.</PURPOSE>
+    </SYSTEM_INTERACTION>
+</REQUIREMENTS_ANALYSIS>
