@@ -359,14 +359,20 @@ def main():
         object_id = source_foreign_ids.get(source_id)
         require(object_id is not None, f"missing empty-text Feature {source_id}")
         attrs = parse_report_attributes(report_objects[object_id])
-        require(attrs.get("ReqIF.Text") == "", f"{source_id}: empty ReqIF.Text was not preserved")
+        if source_id == "adr-10361":
+            require("ReqIF.Text" not in attrs,
+                    "adr-10361: absent ReqIF.Text was not preserved")
+        else:
+            require("ReqIF.Text" in attrs and attrs["ReqIF.Text"] == "",
+                    "adr-10363: empty XHTML ReqIF.Text was not preserved")
         require(attrs.get("ReqIF.ChapterName", "") != "", f"{source_id}: ReqIF.ChapterName was lost")
 
     text_count = 0
     for foreign_id in feature_ids:
         attrs = parse_report_attributes(report_objects[source_foreign_ids[foreign_id]])
-        require("ReqIF.Text" in attrs, f"{foreign_id}: ReqIF.Text attribute is missing")
-        if attrs["ReqIF.Text"].strip():
+        if foreign_id != "adr-10361":
+            require("ReqIF.Text" in attrs, f"{foreign_id}: ReqIF.Text attribute is missing")
+        if attrs.get("ReqIF.Text", "").strip():
             text_count += 1
         elif foreign_id not in EMPTY_TEXT_IDS:
             raise SystemExit(f"FAIL: unexpected empty ReqIF.Text for {foreign_id}")
@@ -401,8 +407,12 @@ def main():
         for foreign_id in source_ids:
             require(foreign_id in feature_ids, f"{case_id}: missing source Feature {foreign_id}")
             attrs = parse_report_attributes(report_objects[source_foreign_ids[foreign_id]])
-            if foreign_id in EMPTY_TEXT_IDS:
-                require(attrs.get("ReqIF.Text") == "", f"{case_id}: {foreign_id} empty text changed")
+            if foreign_id == "adr-10361":
+                require("ReqIF.Text" not in attrs,
+                        f"{case_id}: {foreign_id} absent ReqIF.Text changed")
+            elif foreign_id == "adr-10363":
+                require("ReqIF.Text" in attrs and attrs["ReqIF.Text"] == "",
+                        f"{case_id}: {foreign_id} empty XHTML changed")
             else:
                 require(attrs.get("ReqIF.Text", "").strip() != "",
                         f"{case_id}: {foreign_id} has no preserved ReqIF.Text")
